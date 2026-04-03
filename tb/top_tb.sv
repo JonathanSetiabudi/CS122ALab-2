@@ -1,15 +1,17 @@
 `include "src/top.sv"
-timescale 1ns/1ps
+`timescale 1ns/1ps
 
 module top_tb;
 logic clk;
+logic [3:0] bcd;
+logic [6:0] seg7;
 
-top 
+top uut
 (
-    .clk(clk)
+    // .clk(clk)
     /** add additional signals */
-    wire [3:0] bcd,
-    logic [6:0] seg7
+    .bcd(bcd),
+    .seg7(seg7)
 );
 
 localparam CLK_PERIOD = 100;
